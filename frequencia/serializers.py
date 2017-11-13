@@ -6,14 +6,14 @@ from frequencia.models import Ponto
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
-	class Meta:
-		model = User
-fields = ('url', 'username', 'email')
+    class Meta:
+        model = User
+        fields = ('url', 'username', 'email')
 
 class FuncionarioSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Funcionario
-        fields = ('nome', 'cpf', 'chefe')
+        fields = ('__all__')
 
 class ConfiguracaoSerializer(serializers.HyperlinkedModelSerializer):
     #cpf = FuncionarioSerializer(many = False)
